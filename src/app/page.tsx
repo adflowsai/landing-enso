@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -10,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#f5f5f5' }}>
       <Header />
       <Hero />
       <Services />

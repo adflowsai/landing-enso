@@ -30,8 +30,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className="antialiased bg-[var(--background)] text-[var(--foreground)]">
+    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <style>{`
+          :root {
+            --background: #0a0a0a;
+            --foreground: #f5f5f5;
+            --accent: #f5a623;
+            --accent-hover: #ffbe3d;
+            --secondary: #1a1a1a;
+            --muted: #888888;
+          }
+          body {
+            background: #0a0a0a;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+          }
+        `}</style>
+      </head>
+      <body
+        className="antialiased"
+        style={{
+          background: '#0a0a0a',
+          color: '#f5f5f5',
+          minHeight: '100vh'
+        }}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
